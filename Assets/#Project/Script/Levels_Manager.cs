@@ -28,9 +28,15 @@ public class Levels_Manager : MonoBehaviour
     public static void LoseLife(){
         lifes--;
         print(lifes);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-
+        if (lifes <=0)
+        {
+            SceneManager.LoadScene("GAMEOVER");
+        }
+        else 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        
     }
     // Update is called once per frame
     void Update()
